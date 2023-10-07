@@ -12,12 +12,14 @@ import UpdateTask from './pages/UpdateTask'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { fetchTasks } from './store/tasksSlice'
+import { fetchCollaborators } from './store/collaboratorsSlice'
 
 
 function App() {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchTasks())
+    dispatch(fetchCollaborators())
   }, [])
   return (
     <BrowserRouter>
